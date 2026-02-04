@@ -30,3 +30,12 @@ test:
 production:
   <<: *default
   # database: path/to/persistent/storage/production.sqlite3
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: my_app_production
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  username: postgres
+  password: <%= ENV['RDS_PASSWORD'] %>
+  port: 5432
