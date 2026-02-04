@@ -1,0 +1,11 @@
+<h1>Users</h1>
+
+<turbo-frame id="new_user">
+  <%= render "form", user: @user %>
+</turbo-frame>
+
+<hr>
+
+<turbo-frame id="users">
+  <%= render @users %>
+</turbo-frame>

@@ -1,0 +1,23 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <%= form.hidden_field :source, value: "index" %>
+
+  <%= form.submit "Create User" %>
+<% end %>
